@@ -1,0 +1,20 @@
+Metadata-Version: 2.2
+Name: ft_package
+Version: 0.0.1
+Summary: A sample test package
+Home-page: https://github.com/minotte/piscine_python/ex09/ft_package
+Author: Nil MINOTTE-CERCUS
+Author-email: eagle@42.fr
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+License-File: LICENCE
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-python
+Dynamic: summary
