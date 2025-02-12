@@ -9,7 +9,7 @@ def analyze_text(text: str):
     if (len(text) == 0):
         return
     char_count = len(text)
-    print(f"The text contains {char_count} characters:")
+    print(f"\nThe text contains {char_count} characters:")
     upper_count = sum(1 for c in text if c.isupper())
     print(f"{upper_count} upper letters")
     lower_count = sum(1 for c in text if c.islower())
@@ -17,6 +17,7 @@ def analyze_text(text: str):
     punctuation_count = sum(1 for c in text if c in string.punctuation)
     print(f"{punctuation_count} punctuation marks")
     spaces_cout = sum(1 for c in text if c.isspace())
+    spaces_cout = sum(1 for c in text if c == '\n')
     print(f"{spaces_cout} spaces")
     digits_cout = sum(1 for c in text if c.isdigit())
     print(f"{digits_cout} digits")
@@ -24,13 +25,14 @@ def analyze_text(text: str):
 
 def main():
 
-    """does little parsing"""
+    """main function and does little parsing"""
 
     try:
         if (len(sys.argv) > 2):
             raise AssertionError("more than one argument.")
         elif (len(sys.argv) == 1):
-            text = input("What is the text to count?\n")
+            print("What is the text to count?\n")
+            text = sys.stdin.readline()
         else:
             text = sys.argv[1]
         print(analyze_text.__doc__)
