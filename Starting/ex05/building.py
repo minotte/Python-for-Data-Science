@@ -5,9 +5,14 @@ import string
 
 
 def analyze_text(text: str):
-    """this function count every kind of characters"""
-    if (len(text) == 0):
-        return
+    """
+    this function count every kind of characters.
+    arg:
+        string
+    return:
+        nothing
+    """
+
     char_count = len(text)
     print(f"\nThe text contains {char_count} characters:")
     upper_count = sum(1 for c in text if c.isupper())
@@ -25,7 +30,14 @@ def analyze_text(text: str):
 
 def main():
 
-    """main function and does little parsing"""
+    """
+    main function and does little parsing
+    Args:
+        - text
+        - if not argument the user can write text.
+    Error:
+        - more than one argument
+    """
 
     try:
         if (len(sys.argv) > 2):
@@ -35,12 +47,8 @@ def main():
             text = sys.stdin.readline()
         else:
             text = sys.argv[1]
-        print(analyze_text.__doc__)
+        # print(analyze_text.__doc__)
         analyze_text(text)
-
-    except EOFError:
-        print("\nEOFError: Exiting...")
-        sys.exit(1)
 
     except AssertionError as e:
         print(f"AssertionError: {e}")
