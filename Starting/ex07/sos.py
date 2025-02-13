@@ -46,6 +46,23 @@ def convert_morse(txt: str) -> str:
 
 
 def main():
+    """
+    main function
+
+    Args:
+        - text to translate in morse
+        - just one argument
+        - just alphanumeric and space
+
+    Error:
+        - if 0 argument or more than one
+
+    ex:
+        >> python sos.py "hello world"
+        >> .... . .-.. .-.. --- / .-- --- .-. -..
+        >> python sos.py
+        >> AssertionError: : the arguments are bad
+    """
     try:
         if len(sys.argv) != 2:
             raise AssertionError(": the arguments are bad")
