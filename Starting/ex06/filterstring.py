@@ -7,7 +7,7 @@ from ft_filter import ft_filter
 def main():
     """
     it's main fonction of the programme and call ft_filter to
-    The program should return every word from S 
+    The program should return every word from S
     that have a length greater than N.
     args:
         - 1st : string

@@ -1,4 +1,4 @@
-# 📦 ft_package
+# ft_package
 
 **ft_package** is a simple Python package that provides the `count_in_list` function, which counts the occurrences of an element in a list.
 
