@@ -1,5 +1,12 @@
 # Give my BMI
 
+|||
+|:----------------: |:-----------------------------------:|
+| **Turn-in directory** | *ex01/* |
+| **Files to turn in**| [give_bmi.py](./give_bmi.py) |
+| **Allowed functions** | numpy or any lib of table manipulation |
+
+
 ## Description
 This project implements two functions:
 
@@ -8,7 +15,7 @@ This project implements two functions:
 **apply_limit(bmi, limit):** Checks if each BMI value exceeds a given limit.
 
 ---
-# BMI Formula
+## BMI Formula
 BMI is calculated using the following formula:
 
 ```BMI = weight / (height²)```

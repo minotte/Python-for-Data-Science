@@ -1,6 +1,16 @@
 # Array 2D Slicing
+
+|||
+|:----------------: |:-----------------------------------:|
+| **Turn-in directory** | *ex01/* |
+| **Files to turn in**| [array2D.py](./array2D.py) |
+| **Allowed functions** | numpy or any lib of table manipulation |
+
 ## Description
 This project implements a function that takes a 2D array as input, prints its shape, and returns a truncated version of the array based on the provided start and end arguments using slicing.
+
+## Installation
+numpy
 
 ## Usage
 Function Prototype
