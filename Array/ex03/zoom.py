@@ -26,7 +26,7 @@ def main():
     Loads an image, prints its pixel values, and displays a zoomed-in version.
     """
     try:
-        img_array = ft_load("Array/ex02/animal.jpeg")
+        img_array = ft_load("animal.jpeg")
         if img_array is None:
             raise ValueError("Error: Image could not be loaded.")
 

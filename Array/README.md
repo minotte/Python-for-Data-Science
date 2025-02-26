@@ -32,13 +32,20 @@ pip install numpy pillow matplotlib
 ```
 
 ## Running the Exercises
-Each exercise has its own tester.py file or you can find on the readme of the exercise which file you need use. You can run them as follows:
+stay in the Array folder and run the program with tester.py:
 ```sh
 # exemple
->> cd ex0X
->> python tester.py
+>> python ex00/tester.py
 ```
+there is some exception with :
 
+```sh
+# ex03
+>> python ex03/zoom.py 
+# ex04
+>> python ex04/rotate.py
+
+```
 ## Tree
 
 
