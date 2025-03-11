@@ -36,7 +36,7 @@ def convert_morse(txt: str) -> str:
     try:
         txt = txt.upper()
         msg = "AssertionError: the arguments are bad"
-        assert any(char in txt for char in NESTED_MORSE), msg
+        assert all(char in txt for char in NESTED_MORSE), msg
         morse = " ".join(NESTED_MORSE[char] for char in txt)
         return morse
 

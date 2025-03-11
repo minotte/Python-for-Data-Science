@@ -30,11 +30,7 @@ def main():
         words = S.split()
         assert all(word.isalnum()  for word in words), msg
         filterstring = ft_filter(lambda word: len(word) > N, words)
-        fil = filter(lambda word: len(word) > N, words)
-        print(list(fil))
         print(list(filterstring))
-        print(fil)
-        print(filterstring)
 
     except AssertionError as msg:
         print(f"AssertionError: {msg}")
