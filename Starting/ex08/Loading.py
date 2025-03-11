@@ -19,8 +19,8 @@ def ft_tqdm(lst: range) -> None:
     col = 80
 
     for i in lst:
-        yield i
         percent = ((i+1) / total) * 100
         bar_length = int(((i+1) / total) * col)
         progress = "=" * bar_length + ">" + " " * (col - bar_length)
         print(f"\r{int(percent)}%|[{progress}]| {i+1}/{total}", end="")
+        yield i

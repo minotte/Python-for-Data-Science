@@ -35,8 +35,8 @@ def convert_morse(txt: str) -> str:
     """
     try:
         txt = txt.upper()
-        if any(char not in NESTED_MORSE for char in txt):
-            raise AssertionError("AssertionError: the arguments are bad")
+        msg = "AssertionError: the arguments are bad"
+        assert any(char in txt for char in NESTED_MORSE), msg
         morse = " ".join(NESTED_MORSE[char] for char in txt)
         return morse
 
@@ -64,8 +64,7 @@ def main():
         >> AssertionError: : the arguments are bad
     """
     try:
-        if len(sys.argv) != 2:
-            raise AssertionError(": the arguments are bad")
+        assert len(sys.argv) == 2, ": the arguments are bad"
         morse = convert_morse(sys.argv[1])
         print(morse)
 

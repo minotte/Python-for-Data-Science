@@ -20,24 +20,24 @@ def main():
         every word from S that have a length greater than N
     """
     try:
-        if len(sys.argv) != 3:
-            raise AssertionError("the arguments are bad")
+        msg = "the arguments are bad"
+        # punctuation = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
+        assert len(sys.argv) == 3, msg
         S, N = sys.argv[1], sys.argv[2]
-        try:
-            N = int(N)
-        except ValueError:
-            raise AssertionError("the arguments are bad")
-
-        if not isinstance(S, str):
-            raise AssertionError("the arguments are bad")
+        assert isinstance(S, str), msg
+        assert N[0] in "-+" and N[1:].isdigit() or N.isdigit(), msg
+        N = int(N)
         words = S.split()
-        if not all(word.isalpha() for word in words):
-            raise AssertionError("the arguments are bad")
+        assert all(word.isalnum()  for word in words), msg
         filterstring = ft_filter(lambda word: len(word) > N, words)
+        fil = filter(lambda word: len(word) > N, words)
+        print(list(fil))
         print(list(filterstring))
+        print(fil)
+        print(filterstring)
 
-    except AssertionError as e:
-        print(f"AssertionError: {e}")
+    except AssertionError as msg:
+        print(f"AssertionError: {msg}")
         sys.exit(1)
 
     except KeyboardInterrupt:
