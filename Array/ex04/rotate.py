@@ -5,6 +5,26 @@ import matplotlib.pyplot as plt
 import sys
 
 
+def ft_grey(array: np.ndarray) -> np.ndarray:
+    """
+    Show the grey layer of an RGB image.
+
+    Args:
+        array (np.ndarray): Input image as a NumPy array.
+
+    Returns:
+        np.ndarray: Image with just the grey color.
+    """
+    rows, columns, _ = array.shape
+    img_grey = np.zeros((rows, columns, 1), dtype=np.uint8)
+    for row in range(rows):
+        for column in range(columns):
+            red, green, blue = array[row, column]
+            grey = 0.2989 * red + 0.5870 * green + 0.1140 * blue
+            img_grey[row, column] = (grey)
+    return img_grey
+
+
 # zoom
 
 def zoom(image: img.Image, x1: int, y1: int, x2: int, y2: int) -> img.Image:
@@ -53,7 +73,7 @@ def show_image(img: np.array, title: str):
     function to show the final image.
     """
     try:
-        plt.imshow(img)
+        plt.imshow(img, cmap="gray")
         plt.axis("on")
         plt.title(title)
         plt.show()
@@ -81,9 +101,11 @@ def main():
         img_crop = zoom(image, x1, y1, x2, y2)
         array_crop = np.array(img_crop)
         print(array_crop[0:1, :, 0:1])
-        img_rotate = rotate(array_crop)
-        print(f"New shape after Transpose: {img_rotate.size}")
-        print(img_rotate)
+        img_grey = ft_grey(array_crop)
+        img_rotate = rotate(img_grey.squeeze())
+        
+        print(f"New shape after Transpose: {img_rotate.shape}")
+        print(img_rotate[0:1])
         show_image(img_rotate, "Rotated Image")
 
     except ValueError as e:
